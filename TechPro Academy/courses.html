@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - TechPro Academy</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <h1>Our Courses</h1>
+
+    <!-- Filter Buttons -->
+    <div>
+        <button onclick="filterCourses('all')">All</button>
+        <button onclick="filterCourses('Programming')">Programming</button>
+        <button onclick="filterCourses('Cybersecurity')">Cybersecurity</button>
+        <button onclick="filterCourses('Data Analysis')">Data Analysis</button>
+    </div>
+
+    <!-- Courses -->
+    <div id="course-list">
+        <div class="course" data-category="Programming">
+            <h2>Python Programming</h2>
+            <p>Learn Python from scratch.</p>
+        </div>
+        <div class="course" data-category="Cybersecurity">
+            <h2>Cybersecurity</h2>
+            <p>Protect systems from digital threats.</p>
+        </div>
+        <div class="course" data-category="Data Analysis">
+            <h2>Data Analysis</h2>
+            <p>Analyze data to gain insights.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>Contact us: info@techproacademy.com</p>
+    </footer>
+
+    <script>
+        function filterCourses(category) {
+            let courses = document.querySelectorAll('.course');
+            courses.forEach(course => {
+                if (category === 'all') {
+                    course.style.display = 'block';
+                } else {
+                    if (course.getAttribute('data-category') === category) {
+                        course.style.display = 'block';
+                    } else {
+                        course.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
